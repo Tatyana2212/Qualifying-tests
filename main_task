@@ -1,0 +1,20 @@
+/* Написать программу алгоритма, который по имеющемуся массиву строк формирует
+ массив из строк, длина которых меньше либо равна 3-м символам.*/
+string[] A;
+Console.WriteLine("Enter array of words/symbols with a space between them: ");
+string word = (Console.ReadLine()??"0");
+A = word.Split(' ');
+var result = new string[A .Length];
+var realSize = 0;
+    foreach (var value in A)
+        {
+            if (value.Length <= 3)
+                {
+                    result[realSize] = value;
+                    realSize++;
+                }
+        }
+
+Console.WriteLine();
+Console.WriteLine("The words/symbols with not more than 3 symbols: ");
+Console.WriteLine(string.Join(Environment.NewLine, result));            
